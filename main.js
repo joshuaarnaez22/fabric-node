@@ -8,73 +8,43 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
-registerFont(path.resolve("./fonts/EduAUVICWANTDots-VariableFont_wght.ttf"), {
-  family: "Edu AU VIC WA NT Dots Medium",
-});
-registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
+// try {
+//   registerFont(path.resolve("./fwonts/EduAUVICWANTDots-VariableFont_wght.ttf"), {
+//     family: "Edu AU VIC WA NT Dots Medium",
+//   });
+//   console.error("Success registering EduAUVICWANTDots font:");
+// } catch (err) {
+//   console.error("Error registering EduAUVICWANTDots font:", err);
+// }
+
+try {
+  registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
+  console.error("Success registering Foldit Thin font:");
+} catch (err) {
+  console.error("Foldit Thin font:", err);
+}
+
+try {
+  registerFont(path.resolve("./fonts/RugeBoogie-Regular.ttf"), { family: "Ruge Boogie" });
+  console.error("Success registering Ruge Boogie font:");
+} catch (err) {
+  console.error("Ruge Boogie font:", err);
+}
 
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
+console.log("Fonts registered:", canvas.fonts);
 
 const fabricJSON = {
   version: "4.6.0",
   objects: [
-    // {
-    //   fontSize: 60,
-    //   fontWeight: "400",
-    //   fontFamily: "Foldit Thin",
-    //   fontStyle: "",
-    //   lineHeight: 1.16,
-    //   text: "Foldit Thin",
-    //   charSpacing: 0,
-    //   textAlign: "left",
-    //   styles: [],
-    //   pathStartOffset: 0,
-    //   pathSide: "left",
-    //   pathAlign: "baseline",
-    //   underline: false,
-    //   overline: false,
-    //   linethrough: false,
-    //   textBackgroundColor: "",
-    //   direction: "ltr",
-    //   type: "i-text",
-    //   version: "6.0.2",
-    //   originX: "left",
-    //   originY: "top",
-    //   left: 110.5811,
-    //   top: 20,
-    //   width: 378.8379,
-    //   height: 67.8,
-    //   fill: "design_color_1",
-    //   stroke: null,
-    //   strokeWidth: 1,
-    //   strokeDashArray: null,
-    //   strokeLineCap: "butt",
-    //   strokeDashOffset: 0,
-    //   strokeLineJoin: "miter",
-    //   strokeUniform: false,
-    //   strokeMiterLimit: 4,
-    //   scaleX: 1,
-    //   scaleY: 1,
-    //   angle: 0,
-    //   flipX: false,
-    //   flipY: false,
-    //   opacity: 1,
-    //   shadow: null,
-    //   visible: true,
-    //   backgroundColor: "",
-    //   fillRule: "nonzero",
-    //   paintFirst: "fill",
-    //   globalCompositeOperation: "source-over",
-    //   skewX: 0,
-    //   skewY: 0,
-    // },
     {
-      fontSize: 60,
-      fontWeight: "500",
-      fontFamily: "Edu AU VIC WA NT Dots Medium",
-      fontStyle: "",
+      id: "myText",
+      fontSize: 24,
+      fontWeight: "normal",
+      fontFamily: "Ruge Boogie",
+      fontStyle: "normal",
       lineHeight: 1.16,
-      text: "Edu AU VIC WA NT Dots Medium",
+      text: "Hello, World!",
       charSpacing: 0,
       textAlign: "left",
       styles: [],
@@ -86,15 +56,15 @@ const fabricJSON = {
       linethrough: false,
       textBackgroundColor: "",
       direction: "ltr",
-      type: "i-text",
-      version: "6.0.2",
+      type: "IText",
+      version: "6.4.0",
       originX: "left",
       originY: "top",
-      left: 110.5811,
+      left: 89,
       top: 120,
-      width: 378.8379,
-      height: 67.8,
-      fill: "design_color_1",
+      width: 138.2109,
+      height: 27.12,
+      fill: "#2BEBC8",
       stroke: null,
       strokeWidth: 1,
       strokeDashArray: null,
@@ -103,8 +73,8 @@ const fabricJSON = {
       strokeLineJoin: "miter",
       strokeUniform: false,
       strokeMiterLimit: 4,
-      scaleX: 1,
-      scaleY: 1,
+      scaleX: 3.0475,
+      scaleY: 3.0475,
       angle: 0,
       flipX: false,
       flipY: false,
