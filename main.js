@@ -25,7 +25,7 @@ try {
 }
 
 try {
-  registerFont(path.resolve("./fonts/RugeBoogie-Regular.ttf"), { family: "Ruge Boogie" });
+  registerFont(path.resolve("/usr/share/fonts/RugeBoogie-Regular.ttf"), { family: "Ruge Boogie" });
   console.error("Success registering Ruge Boogie font:");
 } catch (err) {
   console.error("Ruge Boogie font:", err);
