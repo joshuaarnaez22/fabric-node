@@ -8,29 +8,6 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
-// try {
-//   registerFont(path.resolve("./fwonts/EduAUVICWANTDots-VariableFont_wght.ttf"), {
-//     family: "Edu AU VIC WA NT Dots Medium",
-//   });
-//   console.error("Success registering EduAUVICWANTDots font:");
-// } catch (err) {
-//   console.error("Error registering EduAUVICWANTDots font:", err);
-// }
-
-try {
-  registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
-  console.error("Success registering Foldit Thin font:");
-} catch (err) {
-  console.error("Foldit Thin font:", err);
-}
-
-try {
-  registerFont(path.resolve("/usr/share/fonts/RugeBoogie-Regular.ttf"), { family: "Ruge Boogie" });
-  console.error("Success registering Ruge Boogie font:");
-} catch (err) {
-  console.error("Ruge Boogie font:", err);
-}
-
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
 console.log("Fonts registered:", canvas.fonts);
 
@@ -42,7 +19,7 @@ const fabricJSON = {
       fontSize: 24,
       fontWeight: "normal",
       fontFamily: "Ruge Boogie",
-      fontStyle: "normal",
+      fontStyle: "regular",
       lineHeight: 1.16,
       text: "Hello, World!",
       charSpacing: 0,
