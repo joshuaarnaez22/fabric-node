@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "canvas": "^2.11.2",
-    "express": "^4.21.1",
+    "express": "^4.19.2",
     "fabric": "^6.1.0"
   }
 }
