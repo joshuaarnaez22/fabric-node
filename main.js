@@ -8,10 +8,10 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
-registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
 registerFont(path.resolve("./fonts/EduAUVICWANTDots-VariableFont_wght.ttf"), {
   family: "Edu AU VIC WA NT Dots Medium",
 });
+registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
 
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
 
