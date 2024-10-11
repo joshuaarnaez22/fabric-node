@@ -8,12 +8,10 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
-registerFont(path.resolve("./fonts/EduAUVICWANTDots-Regular.ttf"), { family: "Edu AU VIC WA NT Dots" });
-registerFont(path.resolve("./fonts/SixtyfourConvergence-Regular.ttf"), {
-  family: "Sixtyfour Convergence",
-});
 registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
-registerFont(path.resolve("./fonts/Pacifico.ttf"), { family: "Pacifico" });
+registerFont(path.resolve("./fonts/AnatoleFrance.otf"), { family: "Anatole France iF" });
+registerFont(path.resolve("./fonts/BraverGrave-K79ep.otf"), { family: "Braver Grave" });
+registerFont(path.resolve("./fonts/Meillea ttf.ttf"), { family: "Meillea" });
 
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
 
@@ -23,10 +21,10 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Edu AU VIC WA NT Dots",
-      fontStyle: "normal",
+      fontFamily: "Foldit Thin",
+      fontStyle: "",
       lineHeight: 1.16,
-      text: "Edu AU ",
+      text: "Foldit Thin",
       charSpacing: 0,
       textAlign: "left",
       styles: [],
@@ -73,10 +71,10 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Sixtyfour Convergence",
-      fontStyle: "normal",
+      fontFamily: "Anatole France iF",
+      fontStyle: "",
       lineHeight: 1.16,
-      text: "Sixtyfour Convergence",
+      text: "Anatole France iF",
       charSpacing: 0,
       textAlign: "left",
       styles: [],
@@ -123,10 +121,10 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Foldit Thin",
-      fontStyle: "normal",
+      fontFamily: "Braver Grave",
+      fontStyle: "",
       lineHeight: 1.16,
-      text: "Foldit Thin",
+      text: "Braver Grave",
       charSpacing: 0,
       textAlign: "left",
       styles: [],
@@ -173,10 +171,10 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Pacifico",
-      fontStyle: "normal",
+      fontFamily: "Meillea",
+      fontStyle: "",
       lineHeight: 1.16,
-      text: "Pacifico",
+      text: "Meillea",
       charSpacing: 0,
       textAlign: "left",
       styles: [],
