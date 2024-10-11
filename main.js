@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
+registerFont(path.resolve("./fonts/GloriousChristmas-BLWWB.ttf"), { family: "GloriousChristmas" });
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
 
 const fabricJSON = {
@@ -16,7 +17,7 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Times New Roman",
+      fontFamily: "GloriousChristmas",
       fontStyle: "normal",
       lineHeight: 1.16,
       text: "test-ec2-org",
@@ -159,7 +160,7 @@ const loadCanvasJson = async () => {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello Worlds!");
 });
 app.get("/design", (req, res) => {
   loadCanvasJson()
