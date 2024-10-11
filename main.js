@@ -13,7 +13,7 @@ registerFont(path.resolve("./fonts/EduAUVICWANTGuides-VariableFont_wght.ttf"), {
 registerFont(path.resolve("./fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf"), {
   family: "Sixtyfour Convergence",
 });
-registerFont(path.resolve("./fonts/Foldit-Black.ttf"), { family: "foldit" });
+registerFont(path.resolve("./fonts/Foldit-VariableFont_wght.ttf"), { family: "Foldit Thin" });
 
 const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
 
@@ -23,7 +23,7 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "GloriousChristmas",
+      fontFamily: "Foldit Thin",
       fontStyle: "normal",
       lineHeight: 1.16,
       text: "test-ec2-org",
