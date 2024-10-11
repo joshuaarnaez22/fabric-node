@@ -8,7 +8,7 @@ import { fileURLToPath } from "url";
 const app = express();
 const port = 5000;
 
-registerFont(path.resolve("./fonts/EduAUVICWANTGuides-Regular.ttf"), { family: "Edu AU VIC WA NT Guides" });
+registerFont(path.resolve("./fonts/EduAUVICWANTDots-Regular.ttf"), { family: "Edu AU VIC WA NT Dots" });
 registerFont(path.resolve("./fonts/SixtyfourConvergence-Regular.ttf"), {
   family: "Sixtyfour Convergence",
 });
@@ -22,7 +22,7 @@ const fabricJSON = {
     {
       fontSize: 60,
       fontWeight: "normal",
-      fontFamily: "Edu AU VIC WA NT Guides",
+      fontFamily: "Edu AU VIC WA NT Dots",
       fontStyle: "normal",
       lineHeight: 1.16,
       text: "Edu AU ",
