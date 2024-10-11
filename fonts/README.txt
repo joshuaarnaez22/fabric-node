@@ -1,23 +1,26 @@
-Oswald Variable Font
+Foldit Variable Font
 ====================
 
-This download contains Oswald as both a variable font and static fonts.
+This download contains Foldit as both a variable font and static fonts.
 
-Oswald is a variable font with this axis:
+Foldit is a variable font with this axis:
   wght
 
 This means all the styles are contained in a single file:
-  Oswald-VariableFont_wght.ttf
+  Foldit-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Oswald:
-  static/Oswald-ExtraLight.ttf
-  static/Oswald-Light.ttf
-  static/Oswald-Regular.ttf
-  static/Oswald-Medium.ttf
-  static/Oswald-SemiBold.ttf
-  static/Oswald-Bold.ttf
+in those cases you can use the static font files for Foldit:
+  static/Foldit-Thin.ttf
+  static/Foldit-ExtraLight.ttf
+  static/Foldit-Light.ttf
+  static/Foldit-Regular.ttf
+  static/Foldit-Medium.ttf
+  static/Foldit-SemiBold.ttf
+  static/Foldit-Bold.ttf
+  static/Foldit-ExtraBold.ttf
+  static/Foldit-Black.ttf
 
 Get started
 -----------

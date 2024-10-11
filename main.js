@@ -1,57 +1,45 @@
+import express from "express";
 import fs from "fs";
 import * as fabric from "fabric/node"; // v6
 import { registerFont } from "canvas";
-const canvas = new fabric.StaticCanvas(null, { width: 800, height: 800 });
+import path from "path";
+import { fileURLToPath } from "url";
 
-registerFont("./fonts/Roboto-Italic.ttf", { family: "roboto" });
+const app = express();
+const port = 5000;
+
+const canvas = new fabric.StaticCanvas(null, { width: 600, height: 600 });
+
 const fabricJSON = {
   version: "4.6.0",
   objects: [
     {
-      type: "rect",
-      version: "5.3.0",
-      originX: "left",
-      originY: "top",
-      left: 283,
-      top: 87,
-      width: 158,
-      height: 98,
-      fill: "rgba(13, 98, 197, 0.5)",
-      stroke: "rgba(241, 34, 55, 1)",
-      strokeWidth: 17,
-      strokeDashArray: null,
-      strokeLineCap: "butt",
-      strokeDashOffset: 0,
-      strokeLineJoin: "miter",
-      strokeUniform: true,
-      strokeMiterLimit: 4,
-      scaleX: 1,
-      scaleY: 1,
-      angle: 0,
-      flipX: false,
-      flipY: false,
-      opacity: 1,
-      shadow: null,
-      visible: true,
-      backgroundColor: "",
-      fillRule: "nonzero",
-      paintFirst: "fill",
-      globalCompositeOperation: "source-over",
-      skewX: 0,
-      skewY: 0,
-      rx: 0,
-      ry: 0,
-    },
-    {
+      fontSize: 60,
+      fontWeight: "normal",
+      fontFamily: "Times New Roman",
+      fontStyle: "normal",
+      lineHeight: 1.16,
+      text: "test-ec2-org",
+      charSpacing: 0,
+      textAlign: "left",
+      styles: [],
+      pathStartOffset: 0,
+      pathSide: "left",
+      pathAlign: "baseline",
+      underline: false,
+      overline: false,
+      linethrough: false,
+      textBackgroundColor: "",
+      direction: "ltr",
       type: "i-text",
-      version: "5.3.0",
+      version: "6.0.2",
       originX: "left",
       originY: "top",
-      left: 0,
-      top: 269.4,
-      width: 269,
-      height: 45.2,
-      fill: "rgb(0,0,0)",
+      left: 110.5811,
+      top: 266.1,
+      width: 378.8379,
+      height: 67.8,
+      fill: "design_color_1",
       stroke: null,
       strokeWidth: 1,
       strokeDashArray: null,
@@ -74,38 +62,19 @@ const fabricJSON = {
       globalCompositeOperation: "source-over",
       skewX: 0,
       skewY: 0,
-      fontFamily: "roboto",
-      fontWeight: "normal",
-      fontSize: 40,
-      text: "Org_Name_LC",
-      underline: false,
-      overline: false,
-      linethrough: false,
-      textAlign: "left",
-      fontStyle: "normal",
-      lineHeight: 1.16,
-      textBackgroundColor: "",
-      charSpacing: 0,
-      styles: [],
-      direction: "ltr",
-      path: null,
-      pathStartOffset: 0,
-      pathSide: "left",
-      pathAlign: "baseline",
-      id: "Org_Name_LC",
     },
     {
-      type: "i-text",
-      version: "5.3.0",
+      type: "Line",
+      version: "6.0.2",
       originX: "left",
       originY: "top",
-      left: 523.36,
-      top: 268.4,
-      width: 275.64,
-      height: 45.2,
+      left: 110.5811,
+      top: 343.9,
+      width: 378.8379,
+      height: 0,
       fill: "rgb(0,0,0)",
-      stroke: null,
-      strokeWidth: 1,
+      stroke: "design_color_1",
+      strokeWidth: 8,
       strokeDashArray: null,
       strokeLineCap: "butt",
       strokeDashOffset: 0,
@@ -126,136 +95,59 @@ const fabricJSON = {
       globalCompositeOperation: "source-over",
       skewX: 0,
       skewY: 0,
-      fontFamily: "roboto",
-      fontWeight: "normal",
-      fontSize: 40,
-      text: "Org_Name_UC",
-      underline: false,
-      overline: false,
-      linethrough: false,
-      textAlign: "left",
-      fontStyle: "normal",
-      lineHeight: 1.16,
-      textBackgroundColor: "",
-      charSpacing: 0,
-      styles: [],
-      direction: "ltr",
-      path: null,
-      pathStartOffset: 0,
-      pathSide: "left",
-      pathAlign: "baseline",
-      id: "Org_Name_UC",
-    },
-    {
-      type: "i-text",
-      version: "5.3.0",
-      originX: "left",
-      originY: "top",
-      left: 0,
-      top: 349.4,
-      width: 275.64,
-      height: 45.2,
-      fill: "rgb(0,0,0)",
-      stroke: null,
-      strokeWidth: 1,
-      strokeDashArray: null,
-      strokeLineCap: "butt",
-      strokeDashOffset: 0,
-      strokeLineJoin: "miter",
-      strokeUniform: false,
-      strokeMiterLimit: 4,
-      scaleX: 1,
-      scaleY: 1,
-      angle: 0,
-      flipX: false,
-      flipY: false,
-      opacity: 1,
-      shadow: null,
-      visible: true,
-      backgroundColor: "",
-      fillRule: "nonzero",
-      paintFirst: "fill",
-      globalCompositeOperation: "source-over",
-      skewX: 0,
-      skewY: 0,
-      fontFamily: "roboto",
-      fontWeight: "normal",
-      fontSize: 40,
-      text: "Org_Name_UC",
-      underline: false,
-      overline: false,
-      linethrough: false,
-      textAlign: "left",
-      fontStyle: "normal",
-      lineHeight: 1.16,
-      textBackgroundColor: "",
-      charSpacing: 0,
-      styles: [],
-      direction: "ltr",
-      path: null,
-      pathStartOffset: 0,
-      pathSide: "left",
-      pathAlign: "baseline",
-      id: "Org_Name_UC",
-    },
-    {
-      type: "i-text",
-      version: "5.3.0",
-      originX: "left",
-      originY: "top",
-      left: 598.92,
-      top: 343.4,
-      width: 200.08,
-      height: 45.2,
-      fill: "rgb(0,0,0)",
-      stroke: null,
-      strokeWidth: 1,
-      strokeDashArray: null,
-      strokeLineCap: "butt",
-      strokeDashOffset: 0,
-      strokeLineJoin: "miter",
-      strokeUniform: false,
-      strokeMiterLimit: 4,
-      scaleX: 1,
-      scaleY: 1,
-      angle: 0,
-      flipX: false,
-      flipY: false,
-      opacity: 1,
-      shadow: null,
-      visible: true,
-      backgroundColor: "",
-      fillRule: "nonzero",
-      paintFirst: "fill",
-      globalCompositeOperation: "source-over",
-      skewX: 0,
-      skewY: 0,
-      fontFamily: "roboto",
-      fontWeight: "normal",
-      fontSize: 40,
-      text: "Nickname1",
-      underline: false,
-      overline: false,
-      linethrough: false,
-      textAlign: "left",
-      fontStyle: "normal",
-      lineHeight: 1.16,
-      textBackgroundColor: "",
-      charSpacing: 0,
-      styles: [],
-      direction: "ltr",
-      path: null,
-      pathStartOffset: 0,
-      pathSide: "left",
-      pathAlign: "baseline",
-      id: "Nickname1",
+      x1: -189.4189453125,
+      x2: 189.4189453125,
+      y1: 0,
+      y2: 0,
     },
   ],
 };
 
-const loadCanvasJson = async (data) => {
+// const scaleOrgText = (height, width, text) => {
+//   let fontSize = 40; // Initial font size
+
+//   // Create a temporary IText to measure text dimensions
+//   let tempText = new fabric.IText(text, { fontSize });
+//   let textDimensions = tempText.getBoundingRect();
+//   console.log("====================================");
+//   console.log(height, width, text);
+//   console.log("====================================");
+//   console.log("====================================");
+//   console.log(textDimensions, text);
+//   console.log("====================================");
+//   // Adjust fontSize to fit the specified width
+//   while (textDimensions.width > width && fontSize > 1) {
+//     fontSize -= 1; // Decrease font size
+//     tempText.set({ fontSize });
+//     textDimensions = tempText.getBoundingRect(); // Update dimensions after changing font size
+//   }
+
+//   let scaleY = height / textDimensions.height;
+
+//   return {
+//     fontSize,
+//     scaleY,
+//   };
+// };
+// const modifyFabricJson = () => {
+//   //modify fabric json i-text fontsize and scaley
+//   return fabricJSON.objects.map((obj) => {
+//     if (obj.type === "i-text") {
+//       const { width, height, text } = obj;
+//       const { fontSize, scaleY } = scaleOrgText(height, width, text);
+//       // Update the object with the new font size and scaleY
+//       obj.fontSize = fontSize;
+//       obj.scaleY = scaleY;
+//     }
+//     return obj;
+//   });
+// };
+
+const loadCanvasJson = async () => {
   try {
-    await canvas.loadFromJSON(data);
+    if (!canvas) return;
+
+    await canvas.loadFromJSON(fabricJSON);
     canvas.backgroundColor = "white";
     canvas.renderAll();
     canvas.createPNGStream().pipe(fs.createWriteStream("./output.png"));
@@ -263,4 +155,26 @@ const loadCanvasJson = async (data) => {
     console.error("Error loading shapes from json:", error);
   }
 };
-loadCanvasJson(fabricJSON);
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.get("/design", (req, res) => {
+  loadCanvasJson()
+    .then(() => {
+      const filePath = path.join(__dirname, "output.png");
+      if (fs.existsSync(filePath)) {
+        res.sendFile(filePath);
+      } else {
+        res.status(404).json({ message: "File not found" });
+      }
+    })
+    .catch((error) => {
+      console.error("Error generating design:", error);
+      res.status(500).send("Failed to generate design.");
+    });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
